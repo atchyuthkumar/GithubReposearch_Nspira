@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D9C32F42750A5B70027A713 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C32F32750A5B70027A713 /* RepoDetailsViewController.swift */; };
+		2D9C32F72750A64F0027A713 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C32F62750A64F0027A713 /* RepoListViewModel.swift */; };
+		2D9C32FA2750A6F10027A713 /* RepoListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C32F92750A6F10027A713 /* RepoListDataSource.swift */; };
+		2D9C33012750A8900027A713 /* RepoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C32FF2750A8900027A713 /* RepoListTableViewCell.swift */; };
+		2D9C33022750A8900027A713 /* RepoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9C33002750A8900027A713 /* RepoListTableViewCell.xib */; };
+		2D9C33042750A9A90027A713 /* RepoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33032750A9A90027A713 /* RepoListModel.swift */; };
 		2DAAB9FD274FCB2F003910EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */; };
 		2DAAB9FF274FCB2F003910EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */; };
 		2DAABA01274FCB2F003910EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAABA00274FCB2F003910EA /* ViewController.swift */; };
@@ -17,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D9C32F32750A5B70027A713 /* RepoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewController.swift; sourceTree = "<group>"; };
+		2D9C32F62750A64F0027A713 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		2D9C32F92750A6F10027A713 /* RepoListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListDataSource.swift; sourceTree = "<group>"; };
+		2D9C32FF2750A8900027A713 /* RepoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListTableViewCell.swift; sourceTree = "<group>"; };
+		2D9C33002750A8900027A713 /* RepoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoListTableViewCell.xib; sourceTree = "<group>"; };
+		2D9C33032750A9A90027A713 /* RepoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListModel.swift; sourceTree = "<group>"; };
 		2DAAB9F9274FCB2F003910EA /* GitHubRepoSearch_Nspira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubRepoSearch_Nspira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +51,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D9C32F52750A6300027A713 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C32F62750A64F0027A713 /* RepoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D9C32F82750A6CF0027A713 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C32F92750A6F10027A713 /* RepoListDataSource.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		2D9C32FB2750A7A20027A713 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C32FD2750A81A0027A713 /* CustomCell */,
+				2D9C32FE2750A83A0027A713 /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2D9C32FC2750A7EC0027A713 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C33032750A9A90027A713 /* RepoListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D9C32FD2750A81A0027A713 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C32FF2750A8900027A713 /* RepoListTableViewCell.swift */,
+				2D9C33002750A8900027A713 /* RepoListTableViewCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		2D9C32FE2750A83A0027A713 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DAABA00274FCB2F003910EA /* ViewController.swift */,
+				2D9C32F32750A5B70027A713 /* RepoDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		2DAAB9F0274FCB2F003910EA = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +121,12 @@
 		2DAAB9FB274FCB2F003910EA /* GitHubRepoSearch_Nspira */ = {
 			isa = PBXGroup;
 			children = (
+				2D9C32FC2750A7EC0027A713 /* Model */,
+				2D9C32FB2750A7A20027A713 /* Views */,
+				2D9C32F52750A6300027A713 /* ViewModel */,
+				2D9C32F82750A6CF0027A713 /* Utility */,
 				2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */,
 				2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */,
-				2DAABA00274FCB2F003910EA /* ViewController.swift */,
 				2DAABA02274FCB2F003910EA /* Main.storyboard */,
 				2DAABA08274FCB33003910EA /* Assets.xcassets */,
 				2DAABA0A274FCB33003910EA /* LaunchScreen.storyboard */,
@@ -131,6 +197,7 @@
 				2DAABA0C274FCB33003910EA /* LaunchScreen.storyboard in Resources */,
 				2DAABA09274FCB33003910EA /* Assets.xcassets in Resources */,
 				2DAABA04274FCB2F003910EA /* Main.storyboard in Resources */,
+				2D9C33022750A8900027A713 /* RepoListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9C32F42750A5B70027A713 /* RepoDetailsViewController.swift in Sources */,
 				2DAABA01274FCB2F003910EA /* ViewController.swift in Sources */,
+				2D9C32FA2750A6F10027A713 /* RepoListDataSource.swift in Sources */,
+				2D9C33012750A8900027A713 /* RepoListTableViewCell.swift in Sources */,
+				2D9C32F72750A64F0027A713 /* RepoListViewModel.swift in Sources */,
 				2DAAB9FD274FCB2F003910EA /* AppDelegate.swift in Sources */,
 				2DAAB9FF274FCB2F003910EA /* SceneDelegate.swift in Sources */,
 				2DAABA07274FCB2F003910EA /* GitHubRepoSearch_Nspira.xcdatamodeld in Sources */,
+				2D9C33042750A9A90027A713 /* RepoListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
