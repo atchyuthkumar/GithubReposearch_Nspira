@@ -53,7 +53,7 @@
         <!--Repo Details View Controller-->
         <scene sceneID="9HK-JF-ESr">
             <objects>
-                <viewController id="D5R-Ss-3fw" customClass="RepoDetailsViewController" customModule="GitHubRepoSearch_Nspira" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepoDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D5R-Ss-3fw" customClass="RepoDetailsViewController" customModule="GitHubRepoSearch_Nspira" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q6m-P4-xbO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

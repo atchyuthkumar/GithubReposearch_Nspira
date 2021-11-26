@@ -21,26 +21,30 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchBar.delegate = self
         self.reposTableView.isHidden = true
-        self.reposTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
+        self.reposTableView.register(UINib(nibName: "RepoListTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoListTableViewCell")
     }
     
     //MARK:- Functions
     func updateDataSource(){
         
-        self.dataSource = repoTableViewDataSource(cellIdentifier: "SearchTableViewCell", items: self.viewModel.repoData, configureCell: { (cell, evm) in
+        self.dataSource = repoTableViewDataSource(cellIdentifier: "RepoListTableViewCell", items: self.viewModel.repoData, configureCell: { (cell, evm) in
             cell.nameLabel.text = evm.name
         })
         
         DispatchQueue.main.async {
             self.reposTableView.dataSource = self.dataSource
+            self.reposTableView.delegate = self
             self.reposTableView.reloadData()
         }
     }
+    
+    
 }
 
 //MARK:- UISearchBarDelegate
-extension ViewController :UISearchBarDelegate{
+extension ViewController :UISearchBarDelegate, UITableViewDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
@@ -55,10 +59,14 @@ extension ViewController :UISearchBarDelegate{
         searchBar.resignFirstResponder()
         if searchBar.text != "" {
             viewModel = RepoListViewModel()
-            self.viewModel.callFuncToGetEmpData(q: searchBar.text ?? "", page: 1)
-            self.viewModel.bindRepoViewModelToController = {
-                self.updateDataSource()
-            }
+            if (Reachability.isConnectedToNetwork()) {
+                self.viewModel.callFuncToGetEmpData(q: searchBar.text ?? "", page: 1)
+                self.viewModel.bindRepoViewModelToController = {
+                    self.updateDataSource()
+                }
+            } else {
+                self.showNetworkerrorMessage(title: "No internet connection", message: "internet connection is not avialbel, please connect ")
+         }
         }
     }
     
@@ -70,6 +78,7 @@ extension ViewController :UISearchBarDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RepoDetailsViewController") as! RepoDetailsViewController
+       // vc.viewModel = RepoDetailsViewModel(item: self.viewModel.repoData[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

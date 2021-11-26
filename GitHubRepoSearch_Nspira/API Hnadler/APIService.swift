@@ -22,14 +22,14 @@ open class APIService {
     }
     
     public func get(url: String, parameters: [String : String]? = nil, headers: [String: String]? = nil, completion: @escaping BaseAPICompletion) {
-//        let request = Request(url: url, method: .GET, parameters: parameters, headers: headers, body: nil)
-//        let buildRequest = request.request()
-//        if let urlRequest = buildRequest.request {
-//            let task = session.dataTask(with: urlRequest, completionHandler: completion)
-//            task.resume()
-//        } else {
-//            completion(nil, nil, buildRequest.error)
-//        }
+        let request = Request(url: url, method: .GET, parameters: parameters, headers: headers, body: nil)
+        let buildRequest = request.request()
+        if let urlRequest = buildRequest.request {
+            let task = session.dataTask(with: urlRequest, completionHandler: completion)
+            task.resume()
+        } else {
+            completion(nil, nil, buildRequest.error)
+        }
     }
     
 }
