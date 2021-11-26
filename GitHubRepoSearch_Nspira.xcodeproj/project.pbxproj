@@ -13,6 +13,9 @@
 		2D9C33012750A8900027A713 /* RepoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C32FF2750A8900027A713 /* RepoListTableViewCell.swift */; };
 		2D9C33022750A8900027A713 /* RepoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9C33002750A8900027A713 /* RepoListTableViewCell.xib */; };
 		2D9C33042750A9A90027A713 /* RepoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33032750A9A90027A713 /* RepoListModel.swift */; };
+		2D9C33072750AADE0027A713 /* SearchAPIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33062750AADE0027A713 /* SearchAPIList.swift */; };
+		2D9C33092750AB4B0027A713 /* MainAPI_Handele.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33082750AB4B0027A713 /* MainAPI_Handele.swift */; };
+		2D9C330B2750ABAA0027A713 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C330A2750ABAA0027A713 /* APIService.swift */; };
 		2DAAB9FD274FCB2F003910EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */; };
 		2DAAB9FF274FCB2F003910EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */; };
 		2DAABA01274FCB2F003910EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAABA00274FCB2F003910EA /* ViewController.swift */; };
@@ -29,6 +32,9 @@
 		2D9C32FF2750A8900027A713 /* RepoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListTableViewCell.swift; sourceTree = "<group>"; };
 		2D9C33002750A8900027A713 /* RepoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoListTableViewCell.xib; sourceTree = "<group>"; };
 		2D9C33032750A9A90027A713 /* RepoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListModel.swift; sourceTree = "<group>"; };
+		2D9C33062750AADE0027A713 /* SearchAPIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIList.swift; sourceTree = "<group>"; };
+		2D9C33082750AB4B0027A713 /* MainAPI_Handele.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPI_Handele.swift; sourceTree = "<group>"; };
+		2D9C330A2750ABAA0027A713 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2DAAB9F9274FCB2F003910EA /* GitHubRepoSearch_Nspira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubRepoSearch_Nspira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,16 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		2D9C33052750AABE0027A713 /* API Hnadler */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C33062750AADE0027A713 /* SearchAPIList.swift */,
+				2D9C33082750AB4B0027A713 /* MainAPI_Handele.swift */,
+				2D9C330A2750ABAA0027A713 /* APIService.swift */,
+			);
+			path = "API Hnadler";
+			sourceTree = "<group>";
+		};
 		2DAAB9F0274FCB2F003910EA = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +140,7 @@
 				2D9C32FC2750A7EC0027A713 /* Model */,
 				2D9C32FB2750A7A20027A713 /* Views */,
 				2D9C32F52750A6300027A713 /* ViewModel */,
+				2D9C33052750AABE0027A713 /* API Hnadler */,
 				2D9C32F82750A6CF0027A713 /* Utility */,
 				2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */,
 				2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */,
@@ -213,9 +230,12 @@
 				2D9C32FA2750A6F10027A713 /* RepoListDataSource.swift in Sources */,
 				2D9C33012750A8900027A713 /* RepoListTableViewCell.swift in Sources */,
 				2D9C32F72750A64F0027A713 /* RepoListViewModel.swift in Sources */,
+				2D9C33092750AB4B0027A713 /* MainAPI_Handele.swift in Sources */,
 				2DAAB9FD274FCB2F003910EA /* AppDelegate.swift in Sources */,
 				2DAAB9FF274FCB2F003910EA /* SceneDelegate.swift in Sources */,
 				2DAABA07274FCB2F003910EA /* GitHubRepoSearch_Nspira.xcdatamodeld in Sources */,
+				2D9C33072750AADE0027A713 /* SearchAPIList.swift in Sources */,
+				2D9C330B2750ABAA0027A713 /* APIService.swift in Sources */,
 				2D9C33042750A9A90027A713 /* RepoListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
