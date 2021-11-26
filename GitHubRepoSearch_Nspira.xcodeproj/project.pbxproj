@@ -19,6 +19,10 @@
 		2D9C330D2750B5980027A713 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C330C2750B5980027A713 /* Request.swift */; };
 		2D9C330F2750B9B30027A713 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C330E2750B9B30027A713 /* InternetConnection.swift */; };
 		2D9C33122750BA350027A713 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33112750BA350027A713 /* ViewControllerExtension.swift */; };
+		2D9C33142750C54B0027A713 /* RequestDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33132750C54B0027A713 /* RequestDetailViewModel.swift */; };
+		2D9C33162750C5C40027A713 /* ContributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33152750C5C40027A713 /* ContributeModel.swift */; };
+		2D9C33182750C6410027A713 /* ContributeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33172750C6410027A713 /* ContributeDataSource.swift */; };
+		2D9C331A2750C6B20027A713 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C33192750C6B20027A713 /* ImageExtension.swift */; };
 		2DAAB9FD274FCB2F003910EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */; };
 		2DAAB9FF274FCB2F003910EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */; };
 		2DAABA01274FCB2F003910EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAABA00274FCB2F003910EA /* ViewController.swift */; };
@@ -41,6 +45,10 @@
 		2D9C330C2750B5980027A713 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		2D9C330E2750B9B30027A713 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
 		2D9C33112750BA350027A713 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		2D9C33132750C54B0027A713 /* RequestDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailViewModel.swift; sourceTree = "<group>"; };
+		2D9C33152750C5C40027A713 /* ContributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeModel.swift; sourceTree = "<group>"; };
+		2D9C33172750C6410027A713 /* ContributeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeDataSource.swift; sourceTree = "<group>"; };
+		2D9C33192750C6B20027A713 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		2DAAB9F9274FCB2F003910EA /* GitHubRepoSearch_Nspira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubRepoSearch_Nspira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAAB9FC274FCB2F003910EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DAAB9FE274FCB2F003910EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				2D9C32F62750A64F0027A713 /* RepoListViewModel.swift */,
+				2D9C33132750C54B0027A713 /* RequestDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -76,6 +85,7 @@
 			children = (
 				2D9C32F92750A6F10027A713 /* RepoListDataSource.swift */,
 				2D9C330E2750B9B30027A713 /* InternetConnection.swift */,
+				2D9C33172750C6410027A713 /* ContributeDataSource.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -93,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				2D9C33032750A9A90027A713 /* RepoListModel.swift */,
+				2D9C33152750C5C40027A713 /* ContributeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				2D9C33112750BA350027A713 /* ViewControllerExtension.swift */,
+				2D9C33192750C6B20027A713 /* ImageExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -243,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D9C32F42750A5B70027A713 /* RepoDetailsViewController.swift in Sources */,
+				2D9C331A2750C6B20027A713 /* ImageExtension.swift in Sources */,
+				2D9C33182750C6410027A713 /* ContributeDataSource.swift in Sources */,
 				2D9C330D2750B5980027A713 /* Request.swift in Sources */,
 				2DAABA01274FCB2F003910EA /* ViewController.swift in Sources */,
 				2D9C32FA2750A6F10027A713 /* RepoListDataSource.swift in Sources */,
@@ -250,6 +264,7 @@
 				2D9C32F72750A64F0027A713 /* RepoListViewModel.swift in Sources */,
 				2D9C33092750AB4B0027A713 /* MainAPI_Handele.swift in Sources */,
 				2DAAB9FD274FCB2F003910EA /* AppDelegate.swift in Sources */,
+				2D9C33162750C5C40027A713 /* ContributeModel.swift in Sources */,
 				2D9C33122750BA350027A713 /* ViewControllerExtension.swift in Sources */,
 				2DAAB9FF274FCB2F003910EA /* SceneDelegate.swift in Sources */,
 				2DAABA07274FCB2F003910EA /* GitHubRepoSearch_Nspira.xcdatamodeld in Sources */,
@@ -257,6 +272,7 @@
 				2D9C330B2750ABAA0027A713 /* APIService.swift in Sources */,
 				2D9C330F2750B9B30027A713 /* InternetConnection.swift in Sources */,
 				2D9C33042750A9A90027A713 /* RepoListModel.swift in Sources */,
+				2D9C33142750C54B0027A713 /* RequestDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

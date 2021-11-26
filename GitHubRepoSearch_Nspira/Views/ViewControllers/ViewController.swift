@@ -24,10 +24,28 @@ class ViewController: UIViewController {
         self.searchBar.delegate = self
         self.reposTableView.isHidden = true
         self.reposTableView.register(UINib(nibName: "RepoListTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoListTableViewCell")
+        
+        if (!Reachability.isConnectedToNetwork()) {
+            
+            if (UserDefaults.standard.value(forKey: "offline_Data") != nil) {
+                if let emptyData = UserDefaults.standard.value(forKey: "offline_Data") as? [Repo] {
+                  //  self.viewModel.repoData = emptyData
+                }
+            }
+        }
     }
     
     //MARK:- Functions
     func updateDataSource(){
+        
+//        if (UserDefaults.standard.value(forKey: "offline_Data") != nil) {
+//            
+//        } else {
+//            let emptyData = self.viewModel.repoData! as! NSArray
+//            UserDefaults.standard.set(emptyData, forKey: "offline_Data")
+//            UserDefaults.standard.synchronize()
+//        }
+       
         
         self.dataSource = repoTableViewDataSource(cellIdentifier: "RepoListTableViewCell", items: self.viewModel.repoData, configureCell: { (cell, evm) in
             cell.nameLabel.text = evm.name
@@ -78,7 +96,12 @@ extension ViewController :UISearchBarDelegate, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RepoDetailsViewController") as! RepoDetailsViewController
-       // vc.viewModel = RepoDetailsViewModel(item: self.viewModel.repoData[indexPath.row])
+        if let description = self.viewModel.repoData[indexPath.row].itemDescription as? String {
+            vc.itemDescription = description
+        } else {
+            vc.itemDescription = ""
+        }
+        vc.viewModel = RepoDetailsViewModel(item: self.viewModel.repoData[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

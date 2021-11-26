@@ -68,7 +68,7 @@ struct Repo: Codable {
         case itemPrivate = "private"
         case owner
         case htmlURL = "html_url"
-        case itemDescription = "description"
+        case itemDescription = "itemDescription"
         case fork, url
         case forksURL = "forks_url"
         case keysURL = "keys_url"
