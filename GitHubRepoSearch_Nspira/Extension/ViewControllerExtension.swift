@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 extension UIViewController {
-    func showNetworkerrorMessage(title: String,message: String) {
+    func showerrorMessage(title: String,message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Ok", style: .default) { ok in
             alert.dismiss(animated: true, completion: nil)

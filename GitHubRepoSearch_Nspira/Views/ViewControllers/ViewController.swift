@@ -24,38 +24,49 @@ class ViewController: UIViewController {
         self.searchBar.delegate = self
         self.reposTableView.isHidden = true
         self.reposTableView.register(UINib(nibName: "RepoListTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoListTableViewCell")
-        
-        if (!Reachability.isConnectedToNetwork()) {
-            
-            if (UserDefaults.standard.value(forKey: "offline_Data") != nil) {
-                if let emptyData = UserDefaults.standard.value(forKey: "offline_Data") as? [Repo] {
-                  //  self.viewModel.repoData = emptyData
-                }
-            }
-        }
     }
     
     //MARK:- Functions
     func updateDataSource(){
-        
-//        if (UserDefaults.standard.value(forKey: "offline_Data") != nil) {
-//            
-//        } else {
-//            let emptyData = self.viewModel.repoData! as! NSArray
-//            UserDefaults.standard.set(emptyData, forKey: "offline_Data")
-//            UserDefaults.standard.synchronize()
-//        }
        
-        
-        self.dataSource = repoTableViewDataSource(cellIdentifier: "RepoListTableViewCell", items: self.viewModel.repoData, configureCell: { (cell, evm) in
-            cell.nameLabel.text = evm.name
-        })
-        
-        DispatchQueue.main.async {
-            self.reposTableView.dataSource = self.dataSource
-            self.reposTableView.delegate = self
-            self.reposTableView.reloadData()
+        if (self.viewModel.repoData.count > 0) {
+            var dict = [String:Any]()
+            var offline_data = [dict]
+
+            
+            for item in self.viewModel.repoData  {
+                dict["name"] = item.name
+                dict["avatarURL"] = item.owner?.avatarURL
+                dict["login"] = item.owner?.login
+                dict["url"] = item.url
+                dict["html_url"] = item.htmlURL
+                dict["contributorsURL"] = item.contributorsURL
+                offline_data.append(dict)
+            }
+            if (UserDefaults.standard.value(forKey: "offline_Data") != nil) {
+            } else {
+                UserDefaults.standard.set(offline_data, forKey: "offline_Data")
+                UserDefaults.standard.synchronize()
+            }
+            
+            self.dataSource = repoTableViewDataSource(cellIdentifier: "RepoListTableViewCell", items: self.viewModel.repoData, configureCell: { (cell, evm) in
+                cell.nameLabel.text = evm.name
+            })
+            
+            DispatchQueue.main.async {
+                self.reposTableView.dataSource = self.dataSource
+                self.reposTableView.delegate = self
+                self.reposTableView.reloadData()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.searchBar.resignFirstResponder()
+                self.searchBar.text = ""
+                self.reposTableView.isHidden = true
+            self.showerrorMessage(title: "", message: "No results found")
+            }
         }
+        
     }
     
     
@@ -83,7 +94,9 @@ extension ViewController :UISearchBarDelegate, UITableViewDelegate{
                     self.updateDataSource()
                 }
             } else {
-                self.showNetworkerrorMessage(title: "No internet connection", message: "internet connection is not avialbel, please connect ")
+                DispatchQueue.main.async {
+                self.showerrorMessage(title: "No internet connection", message: "internet connection is not avialbel, please connect ")
+                }
          }
         }
     }
@@ -109,10 +122,16 @@ extension ViewController :UISearchBarDelegate, UITableViewDelegate{
         if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingList){
             self.isLoadingList = true
             self.currentNoOfPerPage += 1
+            if (Reachability.isConnectedToNetwork()) {
             self.viewModel.callFuncToGetEmpData(q: searchBar.text ?? "", page: currentNoOfPerPage)
             self.viewModel.bindRepoViewModelToController = {
                 self.isLoadingList = false
                 self.updateDataSource()
+            }
+            } else {
+                DispatchQueue.main.async {
+                self.showerrorMessage(title: "No internet connection", message: "internet connection is not avialbel, please connect ")
+                }
             }
         }
     }
