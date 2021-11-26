@@ -48,6 +48,9 @@ class ViewController: UIViewController {
                 UserDefaults.standard.set(offline_data, forKey: "offline_Data")
                 UserDefaults.standard.synchronize()
             }
+            DispatchQueue.main.async {
+                self.reposTableView.isHidden = false
+            }
             
             self.dataSource = repoTableViewDataSource(cellIdentifier: "RepoListTableViewCell", items: self.viewModel.repoData, configureCell: { (cell, evm) in
                 cell.nameLabel.text = evm.name
@@ -84,7 +87,6 @@ extension ViewController :UISearchBarDelegate, UITableViewDelegate{
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.reposTableView.isHidden = false
         searchBar.resignFirstResponder()
         if searchBar.text != "" {
             viewModel = RepoListViewModel()
